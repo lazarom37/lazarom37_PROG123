@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/css/LazaroCSS.css" rel="stylesheet" runat="server" type="text/css" />
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <header>
+        <img style="display: inline-block;" src="~/images/lazaro_banner.png" />
+        <p style="display: inline-block; font-size:40px">Welcome @ViewBag.UserFirstName</p>
+    </header>
+
+    <div id="content">
+        <article>
+            @RenderBody()
+        </article>
+    </div>
+
+    <nav>
+        <ul>
+            <li>Home</li>
+            <li>Shopping</li>
+            <li>About</li>
+            <li><a href="@Url.Action("ListAllProducts","Lazaro")">Show Products</a></li>
+            <li><a href="@Url.Action("EnterNewProduct","Lazaro")">Add Products</a></li>
+            <li><a href="@Url.Action("Index","Home")">SignUp</a></li>
+        </ul>
+    </nav>
+
+    <footer>
+        Created by Marcus Lazaro (Phase06)
+    </footer>
+</body>
+</html>
