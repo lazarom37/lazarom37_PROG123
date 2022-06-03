@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewData["Title"] = "ListAllProducts";
+    Layout = "~/Views/Shared/_LazaroLayout.cshtml";
+}
+
+@model LinkedList<PROG123.Models.ProductModel>
+<h1>ListAllProducts</h1>
+
+@foreach (PROG123.Models.ProductModel productModel in Model)
+{
+<div class="inputwrap">
+    <label>@productModel.Name || </label>
+    <label style="width:120px;">@productModel.Description || </label>
+    <label>Price: @productModel.Price.ToString("C") || </label>
+    <label>Available: @productModel.InventoryAmount || </label>
+    <label>PID: @productModel.PID || </label>
+
+    <a href="@Url.Action("OneClickBuy","Lazaro", new {PID=productModel.PID})">Buy One Instantly</a>
+</div>
+}

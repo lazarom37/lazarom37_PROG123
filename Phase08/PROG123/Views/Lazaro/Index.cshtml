@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_LazaroLayout.cshtml";
+}
+
+@model PROG123.Models.LogInCredentialsModel
+
+<form id="loginForm" asp-action="LogIn" method="post">
+    <div class="inputwrap">
+        <label>Username:</label>
+        <input asp-for="UserName" class="roundCorners" required size="15" onclick="value='Marcus'" /><br />
+    </div>
+    <div class="inputwrap">
+        <label>Password:</label>
+        <input asp-for="UserPassword" class="roundCorners" required size="15" onclick="value='abc'" /><br />
+    </div>
+    <div class="inputwrap">
+        <label><button type="submit">Log In</button></label>
+        <label style="color:red;">@ViewBag.LoginMessage</label>
+    </div>
+</form>
